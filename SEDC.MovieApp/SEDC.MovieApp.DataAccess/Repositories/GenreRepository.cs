@@ -9,10 +9,16 @@ namespace SEDC.MovieApp.DataAccess.Repositories
 {
     public class GenreRepository : IGenreRepository
     {
-        public void Create(Genre entity)
+        public int Create(Genre entity)
         {
-            entity.Id = StaticDB.Genres.Count;
+            entity.Id = StaticDB.Genres.Count+1;
             StaticDB.Genres.Add(entity);
+            return entity.Id;
+        }
+
+        public bool ExistsWithId(int id)
+        {
+            return StaticDB.Genres.Any(x => x.Id == id);
         }
 
         public List<Genre> GetAll()

@@ -7,9 +7,9 @@ namespace SEDC.MovieApp.Services.Interfaces
 {
     public interface IMovieService
     {
-        Movie GetMovieByGenreId(int genreId);
+        List<Movie> GetMoviesByGenreId(int genreId);
         List<Movie> GetAll();
         Movie GetById(int id);
-        void Create(Movie entity);
+        int Create(Movie entity);
     }
 }

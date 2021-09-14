@@ -8,6 +8,6 @@ namespace SEDC.MovieApp.DataAccess
     {
         List<T> GetAll();
         T GetById(int id);
-        void Create(T entity);
+        int Create(T entity);
     }
 }

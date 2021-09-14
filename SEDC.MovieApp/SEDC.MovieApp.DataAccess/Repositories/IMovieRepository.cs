@@ -7,7 +7,7 @@ namespace SEDC.MovieApp.DataAccess.Repositories
 {
     public interface IMovieRepository : IRepository<Movie>
     {
-        Movie GetMovieByGenreId(int genreId);
+        List<Movie> GetMoviesByGenreId(int genreId);
         bool ExistsWithMovieTitle(string movieTitle);
     }
 }

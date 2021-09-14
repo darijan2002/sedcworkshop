@@ -8,10 +8,11 @@ namespace SEDC.MovieApp.DataAccess.Repositories
 {
     public class MovieRepository : IMovieRepository
     {
-        public void Create(Movie entity)
+        public int Create(Movie entity)
         {
-            entity.Id = StaticDB.Movies.Count;
+            entity.Id = StaticDB.Movies.Count + 1;
             StaticDB.Movies.Add(entity);
+            return entity.Id;
         }
 
         public bool ExistsWithMovieTitle(string movieTitle)
@@ -21,17 +22,31 @@ namespace SEDC.MovieApp.DataAccess.Repositories
 
         public List<Movie> GetAll()
         {
-            return StaticDB.Movies;
+            return StaticDB.Movies.Select(x =>
+            {
+                x.MovieGenre = StaticDB.Genres.SingleOrDefault(y => y.Id == x.MovieGenreId);
+                return x;
+            }).ToList();
         }
 
         public Movie GetById(int id)
         {
-            return StaticDB.Movies.SingleOrDefault(x => x.Id == id);
+            Movie movie = StaticDB.Movies.SingleOrDefault(x => x.Id == id);
+            movie.MovieGenre = StaticDB.Genres.SingleOrDefault(y => y.Id == movie.MovieGenreId);
+            return movie;
         }
 
-        public Movie GetMovieByGenreId(int genreId)
+        public List<Movie> GetMoviesByGenreId(int genreId)
         {
-            return StaticDB.Movies.FirstOrDefault(x => x.MovieGenreId == genreId);
+            var movies = StaticDB.Movies
+                .Where(x => x.MovieGenreId == genreId)
+                .Select(x =>
+            {
+                x.MovieGenre = StaticDB.Genres.SingleOrDefault(y => y.Id == x.MovieGenreId);
+                return x;
+            }).ToList();
+
+            return movies;
         }
     }
 }
