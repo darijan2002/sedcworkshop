@@ -8,6 +8,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using SEDC.MovieApp.DataAccess;
 using SEDC.MovieApp.DataAccess.Repositories;
+using SEDC.MovieApp.DataAccess.Repositories.DapperRepositories;
 using SEDC.MovieApp.Services.Implementations;
 using SEDC.MovieApp.Services.Interfaces;
 using System;
@@ -33,6 +34,7 @@ namespace SEDC.MovieApp
 
             services.AddTransient<IMovieRepository, MovieRepository>();
             services.AddTransient<IGenreRepository, GenreRepository>();
+            services.AddTransient<IUserRepository, UserRepository>();
             services.AddTransient<IMovieService, MovieService>();
             services.AddTransient<IGenreService, GenreService>();
         }

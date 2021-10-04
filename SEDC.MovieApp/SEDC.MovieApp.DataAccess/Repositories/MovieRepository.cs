@@ -10,9 +10,9 @@ namespace SEDC.MovieApp.DataAccess.Repositories
     {
         public int Create(Movie entity)
         {
-            entity.Id = StaticDB.Movies.Count + 1;
+            entity.MovieId = StaticDB.Movies.Count + 1;
             StaticDB.Movies.Add(entity);
-            return entity.Id;
+            return entity.MovieId;
         }
 
         public bool ExistsWithMovieTitle(string movieTitle)
@@ -20,7 +20,7 @@ namespace SEDC.MovieApp.DataAccess.Repositories
             return StaticDB.Movies.Any(x => x.Title == movieTitle);
         }
 
-        public List<Movie> GetAll()
+        public IEnumerable<Movie> GetAll()
         {
             return StaticDB.Movies.Select(x =>
             {
@@ -31,7 +31,7 @@ namespace SEDC.MovieApp.DataAccess.Repositories
 
         public Movie GetById(int id)
         {
-            Movie movie = StaticDB.Movies.SingleOrDefault(x => x.Id == id);
+            Movie movie = StaticDB.Movies.SingleOrDefault(x => x.MovieId == id);
             movie.MovieGenre = StaticDB.Genres.SingleOrDefault(y => y.Id == movie.MovieGenreId);
             return movie;
         }

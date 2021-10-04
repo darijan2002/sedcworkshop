@@ -21,7 +21,7 @@ namespace SEDC.MovieApp.DataAccess.Repositories
             return StaticDB.Genres.Any(x => x.Id == id);
         }
 
-        public List<Genre> GetAll()
+        public IEnumerable<Genre> GetAll()
         {
             return StaticDB.Genres;
         }

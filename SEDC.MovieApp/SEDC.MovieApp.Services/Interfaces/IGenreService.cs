@@ -7,7 +7,7 @@ namespace SEDC.MovieApp.Services.Interfaces
 {
     public interface IGenreService
     {
-        List<Genre> GetAll();
+        IEnumerable<Genre> GetAll();
         Genre GetById(int id);
         void Create(Genre entity);
     }

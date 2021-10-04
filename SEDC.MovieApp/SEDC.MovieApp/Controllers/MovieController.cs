@@ -25,7 +25,7 @@ namespace SEDC.MovieApp.Controllers
         [HttpGet("")]
         public ActionResult<IEnumerable<Movie>> Get()
         {
-            return _movieService.GetAll();
+            return Ok(_movieService.GetAll());
         }
 
         // GET api/<MovieController>/5
