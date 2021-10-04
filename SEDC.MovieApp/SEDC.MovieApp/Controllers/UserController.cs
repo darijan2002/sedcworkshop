@@ -25,5 +25,23 @@ namespace SEDC.MovieApp.Controllers
         {
             return userRepository.GetAll();
         }
+
+        [HttpPost]
+        public int Create(User model)
+        {
+            return userRepository.Create(model);
+        }
+
+        [HttpGet("byId")]
+        public User GetById(int id)
+        {
+            return userRepository.GetById(id);
+        }
+
+        [HttpGet("byUsername")]
+        public User GetByUsername(string username)
+        {
+            return userRepository.GetByUsername(username);
+        }
     }
 }

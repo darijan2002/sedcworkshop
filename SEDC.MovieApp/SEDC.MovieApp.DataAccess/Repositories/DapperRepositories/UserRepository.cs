@@ -29,10 +29,14 @@ namespace SEDC.MovieApp.DataAccess.Repositories.DapperRepositories
                 hashed = sb.ToString();
             }
             using IDbConnection db = new SqlConnection(ConnectionString);
-            return db.QuerySingle<int>(@"
+            db.Open();
+            using var transaction = db.BeginTransaction();
+            int id = db.QuerySingle<int>(@"
 INSERT INTO [User] ([Username], [Password]) 
 OUTPUT INSERTED.[UserId] 
-VALUES (@username, @password);", new { username = entity.Username, password = hashed });
+VALUES (@username, @password);", new { username = entity.Username, password = hashed }, transaction);
+            transaction.Commit();
+            return id;
         }
 
         public IEnumerable<User> GetAll()
