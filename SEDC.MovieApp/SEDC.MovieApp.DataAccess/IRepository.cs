@@ -6,7 +6,7 @@ namespace SEDC.MovieApp.DataAccess
 {
     public interface IRepository<T>
     {
-        List<T> GetAll();
+        IEnumerable<T> GetAll();
         T GetById(int id);
         int Create(T entity);
     }

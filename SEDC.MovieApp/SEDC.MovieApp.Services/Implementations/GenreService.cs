@@ -21,7 +21,7 @@ namespace SEDC.MovieApp.Services.Implementations
             _genreRepository.Create(entity);
         }
 
-        public List<Genre> GetAll()
+        public IEnumerable<Genre> GetAll()
         {
             return _genreRepository.GetAll();
         }

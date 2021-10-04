@@ -26,7 +26,7 @@ namespace SEDC.MovieApp.Services.Implementations
             return _movieRepository.Create(entity);
         }
 
-        public List<Movie> GetAll()
+        public IEnumerable<Movie> GetAll()
         {
             return _movieRepository.GetAll();
         }

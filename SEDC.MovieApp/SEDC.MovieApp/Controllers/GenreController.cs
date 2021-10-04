@@ -23,7 +23,7 @@ namespace SEDC.GenreApp.Controllers
         [HttpGet("")]
         public ActionResult<IEnumerable<Genre>> Get()
         {
-            return _genreService.GetAll();
+            return Ok(_genreService.GetAll());
         }
 
         // GET api/<GenreController>/5

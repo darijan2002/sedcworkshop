@@ -3,13 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31613.86
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SEDC.MovieApp", "SEDC.MovieApp\SEDC.MovieApp.csproj", "{979ED564-C2CE-4B7D-958E-A8DD09208D9E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SEDC.MovieApp", "SEDC.MovieApp\SEDC.MovieApp.csproj", "{979ED564-C2CE-4B7D-958E-A8DD09208D9E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SEDC.MovieApp.Domain", "SEDC.MovieApp.Domain\SEDC.MovieApp.Domain.csproj", "{DB960E7A-482E-4943-A000-DB8097D9B125}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SEDC.MovieApp.Domain", "SEDC.MovieApp.Domain\SEDC.MovieApp.Domain.csproj", "{DB960E7A-482E-4943-A000-DB8097D9B125}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SEDC.MovieApp.DataAccess", "SEDC.MovieApp.DataAccess\SEDC.MovieApp.DataAccess.csproj", "{8FA8900D-6D31-42E1-B460-1D5AA8FB4558}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SEDC.MovieApp.DataAccess", "SEDC.MovieApp.DataAccess\SEDC.MovieApp.DataAccess.csproj", "{8FA8900D-6D31-42E1-B460-1D5AA8FB4558}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SEDC.MovieApp.Services", "SEDC.MovieApp.Services\SEDC.MovieApp.Services.csproj", "{3362C2C6-1E99-4758-BC35-32E9AB0DDD4B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SEDC.MovieApp.Services", "SEDC.MovieApp.Services\SEDC.MovieApp.Services.csproj", "{3362C2C6-1E99-4758-BC35-32E9AB0DDD4B}"
+EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "SEDC.MovieApp.Database", "SEDC.MovieApp.Database\SEDC.MovieApp.Database.sqlproj", "{D711A9C2-E5AA-4784-A478-0CC643C2B132}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,12 @@ Global
 		{3362C2C6-1E99-4758-BC35-32E9AB0DDD4B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3362C2C6-1E99-4758-BC35-32E9AB0DDD4B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3362C2C6-1E99-4758-BC35-32E9AB0DDD4B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D711A9C2-E5AA-4784-A478-0CC643C2B132}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D711A9C2-E5AA-4784-A478-0CC643C2B132}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D711A9C2-E5AA-4784-A478-0CC643C2B132}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{D711A9C2-E5AA-4784-A478-0CC643C2B132}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D711A9C2-E5AA-4784-A478-0CC643C2B132}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D711A9C2-E5AA-4784-A478-0CC643C2B132}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
